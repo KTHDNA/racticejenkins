@@ -1,17 +1,12 @@
-pipeline {
-    agent { docker { image 'python:3.5.1' } }
+peline {
+    agent {
+        docker { image 'node:7-alpine' }
+    }
     stages {
-        stage('build') {
+        stage('Test') {
             steps {
-                sh 'python3 --version'
-		sh 'echo "Hello World!"'
-		sh '''
-			echo "Multiline shell steops works too"
-			ls -lah
-		'''
+                sh 'node --version'
             }
         }
     }
 }
-
-
